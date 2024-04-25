@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Course</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/addCourses.css" />
+    <link rel="stylesheet" href="css/pageMain.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="#home" class="logo">BrainBoost</a>
+        <nav class="navbar">
+          <a href="#home">home</a>
+          <a href="#about">about</a>
+          <a href="#courses">courses</a>
+          <a href="#teachers">teachers</a>
+          <a href="#reviews">reviews</a>
+          <a href="#contact">contact</a>
+          <a href="#" class="btn" id="btn">Inscription</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+      </section>
+    </header>
+    <div class="container">
+      <h1 class="h1">Add Course</h1>
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="form-group link-icon">
+          <label for="title">Title:</label>
+          <i class="fas fa-heading" id="icon-link"></i>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div class="form-group link-icon">
+          <label for="description">Description:</label>
+          <i class="fas fa-keyboard" id="icon-link-description"></i>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group link-icon">
+          <label for="pdf">PDF:</label>
+          <i class="fas fa-file" id="icon-link"></i>
+          <input
+            type="file"
+            id="pdf"
+            name="pdf"
+            accept=".pdf,.doc,.docx"
+            required
+          />
+        </div>
+        <div class="form-group link-icon">
+          <label for="course_link">Course Link:</label>
+          <i class="fas fa-link" id="icon-link"></i>
+          <input type="text" id="course_link" name="course_link" />
+        </div>
+        <div class="form-group link-icon">
+          <label for="category">Category:</label>
+          <i class="fas fa-tags" id="icon-link"></i>
+          <input type="text" id="category" name="category" />
+        </div>
+
+        <!-- Add other form fields here -->
+        <button type="submit" class="btn2">Add Course</button>
+      </form>
+    </div>
+  </body>
+  <footer class="footer">
+    <section>
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-youtube"></a>
+      </div>
+      <div class="credit">
+        &copy; copyright @2024 by <span> our team</span> | all rights reserved!
+      </div>
+    </section>
+  </footer>
+</html>
