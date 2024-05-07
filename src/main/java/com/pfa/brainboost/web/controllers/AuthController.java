@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.pfa.brainboost.DAO.UserRepository;
+import com.pfa.brainboost.DAO.UserOAuthRepository;
 import com.pfa.brainboost.web.models.request.UserAuth;
 
 @Controller
 public class AuthController {
 
     @Autowired
-    private UserRepository userRep;
+    private UserOAuthRepository userRep;
     
     @GetMapping("/login")
     public String login(){
