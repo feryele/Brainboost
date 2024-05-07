@@ -19,7 +19,12 @@ public class UserForm {
     @NotEmpty(message="the email is required")
     private String email;
     
-    @Size(min = 10, max = 10, message = "Phone number must be 10 digits")
+    @Size(min = 8, max = 8, message = "Phone number must be 8 digits")
     private String phone;
+
+    public Long getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
     
 }
