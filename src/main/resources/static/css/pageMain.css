@@ -54,6 +54,15 @@ body{
     font-size: 1.8rem;
     padding: 1rem 3rem;
 }
+.btn-container {
+    display: flex;
+    justify-content: center;
+
+}
+.btn-container a {
+    margin-top: 1.5rem;
+    
+}
 .btn:hover{
     background-color: var(--white);
     color: var(--black);

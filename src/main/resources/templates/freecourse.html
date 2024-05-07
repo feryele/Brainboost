@@ -7,6 +7,63 @@
     <link rel="icon" href="images/entrainement.png">
     <link rel="stylesheet" href="css/freecourse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        let btn = document.getElementById('scroll');
+let a = document.getElementById('search');
+const cont = document.querySelectorAll(".container"); 
+
+window.onscroll = function(){
+    if(scrollY >= 250){
+        btn.style.display= 'block';
+    }
+    else{
+        btn.style.display = 'none';
+    }
+}
+btn.onclick = function(){
+    scroll({
+        top:0,
+        behavior:"smooth"
+    })
+}
+
+a.addEventListener("input", function(){
+    let inputsearch = a.value.toLowerCase();
+    cont.forEach(function(container) {
+        let coursetext = container.querySelector("span").textContent.toLowerCase();
+
+        if (coursetext.includes(inputsearch)){
+            container.style.display = "block";
+        }
+        else{
+            container.style.display = "none";
+        }
+        
+    });
+
+});
+
+
+const checkboxes = document.querySelectorAll('.Category input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const selectedCategories = Array.from(checkboxes) // Convertir la NodeList en un tableau
+                                    .filter(cb => cb.checked) // Filtrer les cases cochées
+                                    .map(cb => cb.value); 
+
+        cont.forEach(container => {
+            const courseCategory = container.dataset.category; 
+
+            
+            if (selectedCategories.includes(courseCategory) || selectedCategories.length === 0) {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none'; 
+            }
+        });
+    });
+});s
+    </script>
 </head>
 <body>
     <header class="header">

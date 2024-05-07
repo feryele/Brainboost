@@ -126,21 +126,15 @@ public class Contoller {
 
     @RequestMapping(value = { "/addcourse" }, method = RequestMethod.POST)
     public String saveCourse(Model model, @Valid @ModelAttribute("courseForm") CourseForm courseForm, BindingResult bindingResult) {
-      if (bindingResult.hasErrors()) {
-        model.addAttribute("errorMessage", "Please fill in all required fields correctly.");
-        return "addcourse";
-       }
+     
 
       String title = courseForm.getTitle();
       String description = courseForm.getDescription();
-      boolean isFree = courseForm.getIsFree();
-      double price = courseForm.getPrice();
+     
       List<String> users = new ArrayList<String>();
-      if (!isFree) {
-          price = 0;
-        }
-      if (title != null && title.length() > 0 && description != null && description.length() > 0 && price >= 0) {
-          Cours newCourse = new Cours(title, description, price, isFree, users);
+      
+      if (title != null && title.length() > 0 && description != null && description.length() > 0 ) {
+          Cours newCourse = new Cours(title, description, 0, false, users);
           rep.save(newCourse);
           return "redirect:/courselist";
      } else {

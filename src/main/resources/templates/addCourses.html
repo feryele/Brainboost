@@ -29,43 +29,24 @@
     </header>
     <div class="container">
       <h1 class="h1">Add Course</h1>
-      <form action="#" method="POST" enctype="multipart/form-data">
+      <form th:action="@{'/addcourse'}" th:method="POST" th:object="${courseForm}">
         <div class="form-group link-icon">
           <label for="title">Title:</label>
           <i class="fas fa-heading" id="icon-link"></i>
-          <input type="text" id="title" name="title" required />
+          <input type="text" id="title" name="title" required th:field="*{title}"/>
         </div>
         <div class="form-group link-icon">
           <label for="description">Description:</label>
           <i class="fas fa-keyboard" id="icon-link-description"></i>
-          <textarea
+          <textarea th:field="*{description}"
             id="description"
             name="description"
             rows="4"
             required
           ></textarea>
         </div>
-        <div class="form-group link-icon">
-          <label for="pdf">PDF:</label>
-          <i class="fas fa-file" id="icon-link"></i>
-          <input
-            type="file"
-            id="pdf"
-            name="pdf"
-            accept=".pdf,.doc,.docx"
-            required
-          />
-        </div>
-        <div class="form-group link-icon">
-          <label for="course_link">Course Link:</label>
-          <i class="fas fa-link" id="icon-link"></i>
-          <input type="text" id="course_link" name="course_link" />
-        </div>
-        <div class="form-group link-icon">
-          <label for="category">Category:</label>
-          <i class="fas fa-tags" id="icon-link"></i>
-          <input type="text" id="category" name="category" />
-        </div>
+        
+        
 
         <!-- Add other form fields here -->
         <button type="submit" class="btn2">Add Course</button>
