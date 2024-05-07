@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-learning</title>
+    <!--font awsome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!--css file link-->
+    <link rel="stylesheet" href="css/pageMain.css">
+    <link rel="icon" href="images/entrainement.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="js/scriptProfil.js" defer></script>
+    <script>
+
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="#home" class="logo">BrainBoost</a>
+            <nav class="navbar">
+                <a href="#home" >home</a>
+                <a href="#about" >about</a>
+                <a href="#courses" >courses</a>
+                <a href="#reviews" >reviews</a>
+                <a href="#contact" >contact</a>
+                <a href="/signup" class="btn" id="btn">Inscription</a>
+                <div class="dropdown" >
+                    <button
+                      class="dropbtn"
+                      onclick="myFunction();goProfile();"
+              
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-user"></i>
+                    </button>
+                    <div
+                      id="myDropdown"
+                      class="dropdown-content"
+                    >
+                      <a class="logout" style="cursor:pointer" onclick="logout()">Logout</a>
+                    </div>
+                  </div>
+        
+            </nav>
+           <div id="menu-btn" class="fas fa-bars"></div>
+        </section>
+    </header>
+    <!--home section-->
+    <section class="home" id="home">
+       <div class="row">
+        <div class="content">
+            <h3>online <span>education</span></h3>
+            <a href="/freecourse" class="btn">Free Courses</a>
+            <button class="btn"id="pay" onclick="pay()">Payed Courses</button>
+
+
+        </div>
+        <div class="image">
+            <img src="https://stories.freepiklabs.com/api/vectors/blog-post/bro/render?color=&background=complete" alt="image of student learn">
+        </div>
+       </div>
+    </section>
+    <section class="count">
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="content">
+                    <h3>150+</h3>
+                    <p>courses</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-user-graduate"></i>
+                <div class="content">
+                    <h3>1300+</h3>
+                    <p>students</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-face-smile"></i>
+                <div class="content">
+                    <h3>100%</h3>
+                    <p>satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="row">
+            <div class="image">
+                <img src="https://stories.freepiklabs.com/api/vectors/course-app/rafiki/render?color=92E3A9FF&background=complete&hide=" alt="student listening to our courses ">
+            </div>
+            <div class="content">
+                <h3>why choose us?</h3>
+                <p>Our platform is staffed by experienced instructors who are experts in their fields, ensuring that you receive high-quality instruction and guidance throughout your learning journey. With a wide range of courses spanning various subjects and skill levels, you'll find the perfect learning opportunities to suit your interests and goals.
+                    <a href="#contact" class="btn">contact us</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="courses" id="courses">
+        <h1 class="heading">our <span>courses</span></h1>
+        <div class="course-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://stories.freepiklabs.com/api/vectors/static-assets/amico/render?color=92E3A9FF&background=complete&hide=" alt="web development course image">
+                    <h3>web development</h3>
+                    <p>The course is delivered through a combination of video lectures, interactive tutorials, coding exercises, and quizzes. Each module is carefully structured to guide learners through the learning process step by step.</p>
+                </div>
+                    <div class="swiper-slide">
+                        <img src="https://stories.freepiklabs.com/api/vectors/marketing-consulting/amico/render?color=92E3A9FF&background=complete&hide=" alt="digital marketing course image">
+                        <h3>digital marketing</h3>
+                        <p> Explore key digital marketing concepts and tools, including social media marketing, email marketing, content marketing, SEO, SEM, analytics, and more. Learn how to create effective digital marketing campaigns that drive traffic, generate leads, and boost conversions. Gain practical experience through hands-on projects and real-world case studies.</p>
+    
+                        
+                    </div>
+               
+               
+                <div class="swiper-slide">
+                    <img src="https://stories.freepiklabs.com/api/vectors/javascript-frameworks/pana/render?color=92E3A9FF&background=complete&hide=" alt="Angular image">
+                   <h3>Angular</h3>
+                   <p>
+                    Dive into Angular fundamentals, including components, directives, services, modules, and more. Learn how to leverage Angular CLI for project setup and management. Discover how to work with templates, data binding, forms, and reactive programming with Angular's powerful features.
+                   </p>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://stories.freepiklabs.com/api/vectors/cyber-attack/bro/render?color=&background=complete&hide=" alt="cyber security image">
+                    <h3>Cyber Security</h3>
+                    <p> Delve into the critical field of cybersecurity with our comprehensive course designed to equip learners with the knowledge and skills needed to protect digital assets and mitigate cyber threats. From understanding the fundamentals of cybersecurity to implementing robust security measures, this course covers essential concepts and practices in cybersecurity.</p>
+
+                </div>
+               
+            </div>
+            
+        </div>
+    </section>
+   
+    <section class="reviews" id="reviews">
+        <h1 class="heading">student's <span>reviews</span></h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                    <p>I've tried many online learning platforms, but yours truly stands out. The courses are well-structured, easy to follow, and packed with valuable content. The instructors are knowledgeable and engaging, making learning enjoyable. The platform's user-friendly interface and interactive features enhance the learning experience. I highly recommend it to anyone looking to expand their skills or knowledge.</p>
+                    <div class="user">
+                        <img src="https://img.freepik.com/premium-photo/young-asian-indian-student-with-glasses-backpack-holds-book-shows-thumbs-up_928503-89.jpg" alt="student picture">
+                        <div class="user-info">
+                            <h3>Mark  Roy</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>I'm incredibly impressed with the quality of courses offered on this learning platform. The instructors are experts in their fields and provide clear explanations of complex concepts. The hands-on projects and quizzes helped me reinforce my learning and apply what I've learned in real-world scenarios. The platform's community forum is also a great place to connect with other learners and share insights. Overall, it's been a fantastic learning experience for me</p>
+                    <div class="user">
+                        <img src="https://plan-uk.org/sites/default/files/styles/gallery_image/public/Images/Article/plan-uk-act-for-girls-street-harassment-jess.jpg?itok=0m03wUK3" alt="student picture">
+                        <div class="user-info">
+                            <h3>Sandra  loren</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>I'm relatively new to online learning, but this platform has exceeded my expectations. The course content is engaging, and the instructors do an excellent job of breaking down complex topics into digestible chunks. The platform's interactive features, such as quizzes and coding exercises, have been instrumental in helping me reinforce my learning. I've already recommended it to several friends and colleagues who are also interested in expanding their skills. Keep up the great work</p>
+                    <div class="user">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTauDC6oAHAIaZsTsHnrdUGYOQhXmMt13TfZ2fCnsl0ww&s" alt="student picture">
+                        <div class="user-info">
+                            <h3>Sarah Vally</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>I've been using this learning platform for a few months now, and I'm impressed by the depth and quality of the courses available. The instructors are passionate and knowledgeable, and they provide clear explanations and practical examples. What I appreciate most is the platform's commitment to continuous improvement</p>
+                    <div class="user">
+                        <img src="https://img.freepik.com/free-photo/young-student-woman-wearing-denim-jacket-eyeglasses-holding-colorful-folders-showing-thumb-up-pink_176532-13861.jpg" alt="student picture">
+                        <div class="user-info">
+                            <h3>Lilly Karl</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>I stumbled upon this learning platform while searching for online courses to enhance my skills, and I'm so glad I did. The courses are comprehensive, well-structured, and taught by industry experts. I particularly enjoy the hands-on projects and case studies, which allow me to apply what I've learned in real-world scenarios</p>
+                    <div class="user">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5bq4aoFe1GGgSlcr7wWkjeP94DLKFbQPaHv-1SGVq4Q&s" alt="student picture">
+                        <div class="user-info">
+                            <h3>Jessica Charles</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>I'm incredibly impressed with the quality of courses offered on this learning platform. The instructors are experts in their fields and provide clear explanations of complex concepts. The hands-on projects and quizzes helped me reinforce my learning and apply what I've learned in real-world scenarios. The platform's community forum is also a great place to connect with other learners and share insights. Overall, it's been a fantastic learning experience for me.</p>
+                    <div class="user">
+                        <img src="https://res.cloudinary.com/highereducation/images/w_1024,h_683,c_scale/f_auto,q_auto/v1659639301/BestColleges.com/College-Guide-For-Black-and-African-American-Students_1367067674/College-Guide-For-Black-and-African-American-Students-1024x683.jpg" alt="student picture">
+                        <div class="user-info">
+                            <h3>Alexander thones</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us</h1>
+        <div class="row">
+            <div class="image">
+                <img src="https://stories.freepiklabs.com/api/vectors/call-center/pana/render?color=92E3A9FF&background=complete&hide=" alt="contact us">
+            </div>
+            <form action=""method="post">
+                <span>your name</span>
+                <input type="text" required placeholder="enter your full name" maxlength="50" name="name" class="box">
+                <span>your email</span>
+                <input type="email" required placeholder="enter your email" maxlength="50" name="email" class="box">
+                <span>your number</span>
+                <input type="number" required placeholder="enter your full name" max="99999999" min="0" name="number" class="box"onkeypress="if(this.value.length==10)return false;">
+                <span>select course</span>
+               <select name="courses" class="box">
+                <option value="" disabled selected >select the course</option>
+                <option value="Web Developmennt">Web Development</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Angular">Angular</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Java">Java</option>
+                <option value="Spring Boot">Spring Boot</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="UX/UI Design">UX/UI Design</option>
+                <option value="Artificial Intelegence">Artificial Intellegence</option>
+                <option value="Python">Python</option>
+               </select>
+                <span>select gender</span>
+                <div class="radio">
+                    <input type="radio" name="gender" value="male" id="male">
+                    <label for="male">male</label>
+                    <input type="radio" name="gender" value="female" id="female">
+                    <label for="female">female</label>
+                </div>
+                <span>Your message</span>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                <input type="submit" value="send message" class="btn" name="send">
+            </form>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script >
+        var swiper = new Swiper(".course-slider", {
+    spaceBetween:20,
+    grabCursor:true,
+    loop:true,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        
+      },
+      768: {
+        slidesPerView: 2,
+       
+      },
+      1024: {
+        slidesPerView: 3,
+        
+      },
+    },
+    
+  });
+  var swiper = new Swiper(".teachers-slider", {
+    spaceBetween:20,
+    grabCursor:true,
+    loop:true,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        
+      },
+      768: {
+        slidesPerView: 2,
+        
+      },
+      1024: {
+        slidesPerView: 3,
+        
+      },
+    },
+   
+    
+  });
+
+  var swiper = new Swiper(".reviews-slider", {
+    spaceBetween:20,
+    grabCursor:true,
+    loop:true,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        
+      },
+      768: {
+        slidesPerView: 2,
+        
+      },
+      1024: {
+        slidesPerView: 3,
+       
+      },
+    },
+    
+    
+  });
+    </script>
+</body>
+<footer class="footer">
+    <section>
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-youtube"></a>
+        </div>
+        <div class="credit">&copy; copyright @2024 by <span> our team</span> | all rights reserved! </div>
+    </section>
+</footer>
+
+
+</html>

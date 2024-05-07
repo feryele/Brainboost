@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>siteweb</title>
+        <link rel="stylesheet" href="css/addstudent.css">
+    </head>
+    <body>
+        <div class="crud">
+            <header>
+                <h1>cruds</h1>
+                <p>Students management system</p>
+            </header>
+            <form class="input" th:action="@{/addstudents}" th:object="${userForm}" method="POST">
+                <input type="text" id="name" placeholder="name" th:field="*{name}">
+                <div class="input1">
+                    <input type="tel"   id="phone" placeholder="phone" th:field="*{phone}" >
+                </div>
+                <input type="email" id="email" placeholder="email" th:field="*{email}">
+                <br>
+                <button type="submit" id="create">create</button>
+            </form>
+        </div>
+        <div th:if="${errorMessage}" style="color:red;font-style:italic;">[[${errorMessage}]]</div>
+    </body>  
+</html>

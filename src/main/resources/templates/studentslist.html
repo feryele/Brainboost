@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>studentlist</title>
+        <link rel="stylesheet" type="text/css"  th:href="@{/css/studentslist.css}">
+    </head>
+    <body>
+        <div class="crud">
+            <header>
+                <h1>cruds</h1>
+                <p>Students management system</p>
+            </header>
+            <div class="outputs">
+                <div class="newstudent">
+                    <a href="addstudents">Add student</a>
+                </div>
+
+                <form th:action="@{/studentslist}" method="get">
+                    <div class="searchblock">
+                        <input  type="text" id="search" name="name" placeholder="saerch" >
+                        <div class="block">
+                            <button  id="searchbytitle">search by name</button>
+                        </div>
+                    </div>
+                </form>
+                
+
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:text="${user.phone}"></td>
+                        <td>
+                             <a th:href="@{/updatestudent(id=${user.id})}">Update</a>
+                        </td>
+                        <br>
+                        <td>
+                            <a th:href="@{/deletestudent(id=${user.id})}" onclick="return confirm('Are you sure ?')">Delete</a>
+                        </td>
+                        
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <script src=""></script>
+  
+    </body>
+</html>

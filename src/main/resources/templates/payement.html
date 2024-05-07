@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payement</title>
+     <!--font awsome cdn link-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <!--css file link-->
+     <link rel="stylesheet" href="css/payement.css">
+     <link rel="icon" href="https://img.icons8.com/?size=48&id=13015&format=png">
+    <script>
+        window.onload=function(){
+            const user =JSON.parse(localStorage.getItem("tempUser"));
+            document.querySelector(".name").value=user.displayName;
+            document.querySelector(".email").value=user.email;   
+        }
+
+        function getID(){
+            const url = new URL(window.location.href);
+
+            // Extract the ID based on its location in the URL:
+
+            // a) ID from path segments:
+            const pathname = url.pathname;
+            const segments = pathname.split('/');
+            return segments.slice(-1)[0]; // Get the last segment
+
+          
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const user =JSON.parse(localStorage.getItem("tempUser"));
+            const form = document.getElementById("myForm");
+            const name = document.querySelector(".name");
+            const email =   document.querySelector(".email");
+            const address = document.querySelector(".adresse ");
+            const ccnumber = document.querySelector(".cc-number ");
+            function isValidCardFormat(cc) {
+                return creditCardFormatRegex.test(cc);
+            }
+            const creditCardFormatRegex = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+
+            if (form) {
+                form.addEventListener("submit", (event) => {
+                    event.preventDefault(); // Prevents the form from submitting in the usual way
+
+                    if(email.value && address.value && ccnumber.value){
+                        if(isValidCardFormat(ccnumber.value)){
+                            const url = 'http://localhost:8080/createUser'; // Replace with your endpoint
+                            const uid = user.uuid;
+                            const name = user.displayName;
+                            const email = user.email;
+                            const data = {
+                                uid,name,email
+                            };
+                            fetch(url, {
+                                method: 'POST', // HTTP method
+                                headers: {
+                                    'Content-Type': 'application/json', // Content type for JSON data
+                                },
+                                body: JSON.stringify(data), // Convert the data object to JSON
+                            })
+                            .then((data) => {
+                                alert("data");
+                                console.log(data); // Handle the successful response data
+                                localStorage.removeItem('tempUser');
+                                window.location.href="/login";
+                            })
+                            .catch((error) => {
+                                console.error('Fetch error:', error); // Handle fetch errors
+                            });
+                        } else {
+                            alert("ITS not VALID");
+                        }
+                    } else {
+                        alert("please fill form");
+                    }
+                });
+
+            } else {
+                console.error("Form element with ID 'myForm' not found.");
+            }
+        });
+    </script>
+     
+</head>
+<body>
+<div class="container">
+    <form id="myForm" action="">
+        <div class="row">
+            <div class="col">
+                <h3 class="title">Billing Address</h3>
+                <div class="inputBox">
+                    <span>Full name:</span>
+                    <input type="text" placeholder="Enter your name" class="name" disabled>
+                </div>
+                <div class="inputBox">
+                    <span>Email:</span>
+                    <input type="email" placeholder="Enter your email" class="email" disabled>
+                </div>
+                <div class="inputBox">
+                    <span>Address:</span>
+                    <input type="text" class="adresse" placeholder="Room - Street - Locality">
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="title">Payment</h3>
+                
+                <div class="inputBox">
+                    <span>Name on card:</span>
+                    <input type="text" placeholder="Mr. Johns Freek">
+                </div>
+                <div class="inputBox">
+                    <span>Credit card number:</span>
+                    <input type="text" placeholder="1111-2222-3333-4444" class="cc-number">
+                </div>
+                <div class="inputBox">
+                    <span>Exp month:</span>
+                    <input type="text" placeholder="January">
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Exp year:</span>
+                        <input type="number" placeholder="2024">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV:</span>
+                        <input type="text" placeholder="123">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Proceed to checkout" class="submit-btn">
+    </form>
+</div>
+</body>
+</html>

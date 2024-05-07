@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>courselist</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{/css/courselist.css}"/> 
+</head>
+<body>
+    <div class="crud">
+        <header>
+            <h1>cruds</h1>
+            <p>Courses management system</p>
+        </header>
+        <div class="outputs">
+            <div class="newcourse">
+                <a href="addcourse" >Add course</a>
+            </div>
+            <form th:action="@{/courselist}" method="get">
+
+                <div class="searchblock">
+                    <input  type="text" id="search" name="title" placeholder="search" >
+                    <div class="block">
+                        <button type="submit"  id="searchbytitle">search by title</button>
+                    </div>
+                
+                </div>
+            </form>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>description</th>
+                    <th>isFree</th>
+                    <th>price</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tr th:each="course : ${courses}">
+                    <td th:text="${course.id}"></td>
+                    <td th:text="${course.title}"></td>
+                    <td th:text="${course.description}"></td>
+                    <td th:text="${course.isFree}"></td>
+                    <td th:text="${course.price}"></td>
+                    <td>
+                         <a th:href="@{/updatecourse(id=${course.id})}">Update</a>
+                    </td>
+                    <br>
+                    <td>
+                        <a th:href="@{/deletecourse(id=${course.id})}" onclick="return confirm('Are you sure ?')">Delete</a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

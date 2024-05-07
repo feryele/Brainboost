@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>siteweb</title>
+        <link rel="stylesheet"  th:href="@{/css/addcourse.css}">
+    </head>
+    <body>
+        <div class="crud">
+            <header>
+                <h1>cruds</h1>
+                <p>Courses management system</p>
+            </header>
+            <form class="input" th:action="@{/updatecourse}" th:object="${courseForm}" method="POST">
+                
+                <input type="hidden" name="id" th:value="${course.id}" />
+                <div>
+                    <input type="text"  id="Title" placeholder="Title" th:field="*{Title}">
+                    <p th:if="${#fields.hasErrors('Title')}" th:errors="${courseForm.Title}"></p>
+                </div>
+                
+                <input type="text" id="description" placeholder="description" th:field="*{description}">
+                <input type="text" id="isFree"  placeholder="isFree" th:field="*{isFree}">
+                <input type="number" id="price" placeholder="price" th:field="*{price}">
+
+                <br>
+                <button type="submit"  id="create">update</button>
+            </form>
+        </div>
+        <div th:if="${errorMessage}" th:text="${errorMessage}" style="color:red;font-style:italic;"></div>
+
+        <script src=""></script>
+    </body>  
+</html>

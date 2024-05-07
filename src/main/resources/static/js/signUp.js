@@ -23,8 +23,9 @@ googleLogin.addEventListener("click", function(){
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
+            localStorage.setItem("tempUser", JSON.stringify(user));
             console.log(user);
-            window.location.href="../Logged.html";
+            window.location.href="/payement";
 
         }).catch((error) => {
             const errorCode = error.code;

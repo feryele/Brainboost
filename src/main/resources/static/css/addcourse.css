@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body{
+    background: #222121;
+    color: #fff;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.crud header{
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.crud header h1{
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+.crud header p{
+    letter-spacing: 1px;
+}
+.input{
+    margin-top: 70px;
+}
+.crud .input input{
+    background: #000;
+    color: #ccc;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    height: 30px;
+    margin: 5px 0;
+    padding: 4px;
+    position: relative;
+    left: 2%;
+}
+.crud .input input:focus{
+    background: #111;
+    transform: scale(1);
+}
+#create{
+    width: 95%;
+    border: none;
+    height: 34px;
+    border-radius: 7px;
+    position: relative;
+    left: 2%;
+    margin-top: 5px;
+    cursor: pointer;
+    background:#00E77F;
+}
+#create:hover{
+    background:#02af61;
+    transition: 0.4s;
+}

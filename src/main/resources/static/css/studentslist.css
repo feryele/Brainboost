@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body{
+    background: #222121;
+    color: #fff;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.crud header{
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.crud header h1{
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+.crud header p{
+    letter-spacing: 1px;
+}
+.outputs{
+    margin-top: 70px;
+}
+.newstudent{
+    margin-left: 30px;
+    margin-bottom: 25px;
+}
+.newstudent a{
+    border: solid 1px #00E77F;
+    border-radius: 10px;
+    color: #00E77F;
+    padding: 10px 10px 10px 10px;
+    transition: 0.4s;
+}
+.newstudent a:hover{
+    background-color: #00E77F;
+    color: #000;
+}
+.searchblock input{
+    width: 95%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    left: 2%;
+    margin-top: 11px;
+    outline: none;
+    background: #000;
+    color: #ccc;
+}
+.searchblock input:focus{
+    background: #111;
+    transform: scale(1);
+}
+.block button{
+    margin-top: 10px;
+    border-radius: 7px;
+    border: none;
+    width: /*47%*/ 95%;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    left: 2%;
+    background: #00E77F;    
+}
+.block button:hover{
+    background: #02af61;
+    transition: 0.4s;
+}
+/*tbody tr td button{
+    border: none;
+    outline: none;
+    background: #00E77F;
+    padding: 3px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+tbody tr td button:hover{
+    background: #02af61;
+    transition: 0.4s;
+}*/
+tr td a{
+    border: none;
+    outline: none;
+    background: #00E77F;
+    padding: 3px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+}
+tr td a:hover{
+    background: #02af61;
+    transition: 0.4s;
+}
+tr th{
+    letter-spacing: 1px;
+    text-transform:uppercase;
+    font-size: 16px;  
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0; 
+    border-collapse: separate;  
+}
+
+@media screen and (max-width:700px){
+    tbody tr td{
+        padding-left: 5px;
+        font-size: 9px;
+    }
+    tr th{
+        font-size: 10px;
+        padding-left: 5px;
+    }
+    table{
+        position: relative;
+        left: 0;
+        
+    }
+}
+@media screen and (max-width:900px) and (min-width:700px){
+    table{
+        position: relative;
+        left: 1%;
+    }
+}

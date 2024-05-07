@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body{
+    background: #222121;
+    color: #fff;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.crud header{
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.crud header h1{
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+.crud header p{
+    letter-spacing: 1px;
+}
+.btn{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn a{
+    margin-right: 10px;
+    border: solid 1px #00E77F;
+    color: #00E77F;
+    padding: 15px 50px 15px 50px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+.btn a:hover{
+    background-color: #00E77F;
+    color: #222121;
+}
